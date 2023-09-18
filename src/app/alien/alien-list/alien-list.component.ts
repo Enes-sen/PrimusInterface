@@ -18,7 +18,11 @@ export class AlienListComponent implements OnInit{
   }
   delete(alien: Alien)
   {
-    console.log(Alien);
+    if(alien)
+    {
+      console.log(true);
+    }
+    console.log(false);
   }
 
 }
