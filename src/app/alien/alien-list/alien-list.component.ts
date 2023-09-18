@@ -19,7 +19,11 @@ export class AlienListComponent implements OnInit{
   delete(alien: Alien) {
     if (alien) {
         console.log("Alien deleted:", alien);
+        this.alienServ.delete(alien);
         // Burada başka işlemler yapabilirsiniz.
     }
  }
+  get isOwner() {
+    return this.authServ.getCurrentUserId();
+  }
 }
