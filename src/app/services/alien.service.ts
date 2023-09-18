@@ -24,7 +24,7 @@ export class AlienService {
     console.log("alien:",alien);
     this.http.post(this.path + 'add', alien).subscribe(() => {
       this.alertServ.success('Dna başarıyla eklendi');
-      this.reloadPage();
+      this.route.navigate(['']);
 
     },
     (errorResponse) => {
@@ -44,7 +44,7 @@ export class AlienService {
     console.log("alien:",alien);
     this.http.post(this.path + 'delete', alien).subscribe(() => {
       this.alertServ.success('Dna başarıyla Kaldırıldı');
-      this.reloadPage();
+      this.route.navigate(['']);
 
     },
     (errorResponse) => {
@@ -59,10 +59,5 @@ export class AlienService {
         }
     }
     );
-  }
-  reloadPage() {
-    setTimeout(() => {
-      window.location.reload();
-    }, 300);
   }
 }
