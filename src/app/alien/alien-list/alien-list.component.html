@@ -16,7 +16,7 @@
       <td class="text-dark">{{alien.dnasample}}</td>
       <td class="text-dark">{{alien.givenname}}</td>
       <td class="text-dark"><img src="{{alien.alienshadow}}" alt="Alien Shadow" class="img-fluid" style="max-width: 50px; height: 100px;"></td>
-      <td><button class="btn btn-danger text-dark w-100" style="font-weight:800;">Delete-Alien</button></td>
+      <td><button class="btn btn-danger text-dark w-100" (click)="delete(alien)"  style="font-weight:800;">Delete-Alien</button></td>
     </tr>
   </tbody>
 
