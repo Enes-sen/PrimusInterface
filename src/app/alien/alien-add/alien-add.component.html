@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-6">
+      <form *ngIf="!isAuthenticated"[formGroup]="alienAddForm" (ngSubmit)="add()" enctype="multipart/form-data" class="p-3 border rounded">
+        <div class="form-group">
+          <label for="homeWorld">Home-world</label>
+          <input type="text" formControlName="homeWorld" class="form-control" id="homeWorld" placeholder="Home-World">
+          <span class="help-block text-danger" *ngIf="alienAddForm.get('homeWorld')?.hasError('required')&&alienAddForm.get('homeWorld')?.touched">
+            ana dünya tanımı gereklidir!</span>
+        </div>
+        <div class="form-group">
+          <label for="dnaSample">Dna-Sample</label>
+          <input type="text" formControlName="dnaSample" class="form-control" id="dnaSample" placeholder="Dna-Sample">
+          <span class="help-block text-danger" *ngIf="alienAddForm.get('dnaSample')?.hasError('required')&&alienAddForm.get('dnaSample')?.touched">
+            dna tanımlamak zorunludur</span>
+        </div>
+        <div class="form-group">
+          <label for="givenName">	Given-Name</label>
+          <input type="text" formControlName="givenName" class="form-control" id="givenName" placeholder="Given-Name">
+          <span class="help-block text-danger" *ngIf="alienAddForm.get('givenName')?.hasError('required')&&alienAddForm.get('givenName')?.touched">
+            İsim vermek gereklidir!</span>
+        </div>
+        <div class="form-group">
+          <label for="alienShadow"  class="form-label mt-4">Alien-Shadow</label>
+          <input class="form-control" formControlName="formFile" (change)="onFileSelected($event)" type="file" id="formFile">
+          <span class="help-block text-danger"  *ngIf="alienAddForm.get('formFile')?.hasError('required')&&alienAddForm.get('formFile')?.touched">
+            Uzaylı Gölgesi gereklidir!</span>
+        </div>
+        <button type="submit" [disabled]="!alienAddForm.valid" class="btn btn-primary w-100">Save-Alien</button>
+      </form>
+    </div>
+  </div>
+</div>
