@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="p-3 border rounded w-50">
+    <h6 class="text-danger" *ngIf="!registerForm.valid">*Tüm alanları doldurun Lütfen!</h6>
+    <h3>Register a User</h3>
+    <div class="form-group">
+      <label for="UserName">Username</label>
+      <input type="text" class="form-control" id="UserName" formControlName="userName" autofocus placeholder="Username">
+      <span class="help-block text-danger" *ngIf="registerForm.get('userName')?.hasError('required') && registerForm.get('userName')?.touched">
+        Kullanıcı Adı Oluşturmak Zorunludur!
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="password" autofocus placeholder="Password">
+      <span class="help-block text-danger" *ngIf="registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched">
+        Parola Oluşturmak Zorunludur!
+      </span>
+    </div>
+    <button type="submit" class="btn btn-primary w-100" [disabled]="!registerForm.valid">Kayıt Ol</button>
+  </form>
+
+</div>
