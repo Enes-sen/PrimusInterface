@@ -16,7 +16,7 @@ export class AlienListComponent implements OnInit{
       this.aliens = data;
     });
   }
-  delete(alien: Alien): void
+  delete(alien: Alien)
   {
     console.log(Alien);
   }
