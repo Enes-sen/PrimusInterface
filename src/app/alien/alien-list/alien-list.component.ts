@@ -16,13 +16,10 @@ export class AlienListComponent implements OnInit{
       this.aliens = data;
     });
   }
-  delete(alien: Alien)
-  {
-    if(alien)
-    {
-      return true;
+  delete(alien: Alien) {
+    if (alien) {
+        console.log("Alien deleted:", alien);
+        // Burada başka işlemler yapabilirsiniz.
     }
-    return false;
-  }
-
+ }
 }
