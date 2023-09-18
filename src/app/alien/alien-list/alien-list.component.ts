@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AlienService } from 'src/app/services/alien.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Alien } from 'src/models/Alien';
 
 @Component({
@@ -8,12 +9,17 @@ import { Alien } from 'src/models/Alien';
   styleUrls: ['./alien-list.component.css']
 })
 export class AlienListComponent implements OnInit{
-  constructor(private alienServ:AlienService){}
+  constructor(private alienServ:AlienService, private authServ:AuthService){}
   aliens:Alien[] =[];
   ngOnInit(): void {
     this.alienServ.getAliens().subscribe(data=>{
       this.aliens = data;
     });
+  }
+  delete(Alien alien)
+  {
+    var id = this.authServ.getCurrentUserId();
+    console.log("user:",id,"Alien",alien);
   }
 
 }
