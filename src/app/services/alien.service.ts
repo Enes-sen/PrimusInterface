@@ -24,7 +24,7 @@ export class AlienService {
     console.log("alien:",alien);
     this.http.post(this.path + 'add', alien).subscribe(() => {
       this.alertServ.success('Dna başarıyla eklendi');
-      this.route.navigate(['']);
+      this.route.navigateByUrl('/alien');
 
     },
     (errorResponse) => {
@@ -44,7 +44,7 @@ export class AlienService {
     console.log("alien:",alien);
     this.http.post(this.path + 'delete', alien).subscribe(() => {
       this.alertServ.success('Dna başarıyla Kaldırıldı');
-      this.route.navigate(['']);
+      this.router.navigateByUrl('/alien');
 
     },
     (errorResponse) => {
