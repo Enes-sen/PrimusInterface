@@ -1,0 +1,23 @@
+<table class="table table-dark table-hover" style="font-weight:700;">
+  <thead>
+    <tr>
+      <th scope="col" class="text-success">#Id</th>
+      <th scope="col" class="text-success">Home-World</th>
+      <th scope="col" class="text-success">Dna-Sample</th>
+      <th scope="col" class="text-success">Given-Name</th>
+      <th scope="col" class="text-success">Alien-Shadow</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-success" *ngFor="let alien of aliens">
+      <td class="text-dark">{{alien.id}}</td>
+      <td class="text-dark">{{alien.homeWorld}}</td>
+      <td class="text-dark">{{alien.dnaSample}}</td>
+      <td class="text-dark">{{alien.givenName}}</td>
+      <td class="text-dark"><img src="{{alien.alienShadow}}" alt="Alien Shadow" class="img-fluid" style="max-width: 50px; height: 100px;"></td>
+      <td><button class="btn btn-danger text-dark w-100" style="font-weight:800;">Delete-Alien</button></td>
+    </tr>
+  </tbody>
+
+</table>
