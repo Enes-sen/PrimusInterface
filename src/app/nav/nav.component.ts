@@ -27,7 +27,8 @@ export class NavComponent implements OnInit {
   login(){
     if (this.loginForm.valid) {
       this.loginUser = Object.assign({}, this.loginForm.value);
-      this.authServ.login(this.loginUser)
+      this.authServ.login(this.loginUser);
+      this.loginForm.reset();
     }
   }
   logOut() {
