@@ -42,23 +42,23 @@ export class AlienAddComponent implements OnInit {
 
 
       if (this.file) { // Check if file is defined
-        this.alien.formFile = this.file;
+        this.alien.formfile = this.file;
         console.log("formfile:",this.alien.formFile.name,",",this.alien.formFile.type,",",this.alien.formFile.size);
       }
       const alienFormData = new FormData();
-      alienFormData.append("HomeWorld",this.alien.homeWorld);
-      alienFormData.append("DnaSample",this.alien.dnaSample);
-      alienFormData.append("GivenName",this.alien.givenName);
-      alienFormData.append("FormFile",this.alien.formFile);
+      alienFormData.append("HomeWorld",this.alien.homeworld);
+      alienFormData.append("DnaSample",this.alien.dnasample);
+      alienFormData.append("GivenName",this.alien.givenname);
+      alienFormData.append("FormFile",this.alien.formfile);
 // Diğer form verilerini de ekleme işlemini burada gerçekleştirin, eğer varsa
 
 
-      this.alien.userId = this.authServ.getCurrentUserId();
+      this.alien.userid = this.authServ.getCurrentUserId();
 
       console.log("alien:", this.alien);
 
       if (this.alien !== null) {
-        alienFormData.append("UserId",this.alien.userId.toString());
+        alienFormData.append("UserId",this.alien.userid.toString());
         this.alienServ.add(alienFormData);
 
 
