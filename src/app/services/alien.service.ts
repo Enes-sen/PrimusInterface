@@ -15,7 +15,7 @@ export class AlienService {
     private alertServ: AlertifyService,
     private  route:Router
   ) { }
-  path = 'http://localhost:5058/api/aliens/';
+  path = 'https://primusdb.azurewebsites.net/api/aliens/';
   getAliens():Observable<Alien[]>{
     return this.http.get<Alien[]>(this.path+"getall");
   }
