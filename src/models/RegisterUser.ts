@@ -1,4 +1,4 @@
 export class RegisterUser{
-  userName?:string;
+  username?:string;
   password?:string;
 }
