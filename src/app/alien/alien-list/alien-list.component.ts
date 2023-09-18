@@ -20,9 +20,9 @@ export class AlienListComponent implements OnInit{
   {
     if(alien)
     {
-      console.log(true);
+      return true;
     }
-    console.log(false);
+    return false;
   }
 
 }
