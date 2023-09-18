@@ -40,6 +40,26 @@ export class AlienService {
     }
     );
   }
+  delete(alien:Alien) {
+    console.log("alien:",alien);
+    this.http.post(this.path + 'delete', alien).subscribe(() => {
+      this.alertServ.success('Dna başarıyla Kaldırıldı');
+      this.reloadPage();
+
+    },
+    (errorResponse) => {
+        // Handle error response, including validation errors
+        console.log("errorres:",errorResponse);
+
+        // Display validation errors to the user
+        if (errorResponse.error && errorResponse.error.errors) {
+            const validationErrors = errorResponse.error.errors;
+            console.log("error:",validationErrors);
+            // Display validation errors to the user
+        }
+    }
+    );
+  }
   reloadPage() {
     setTimeout(() => {
       window.location.reload();
