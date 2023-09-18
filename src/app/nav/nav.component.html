@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-success" routerLink="/alien">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b700c630-9435-4853-b567-d025115b827b/degakzn-576504c0-f8f6-40f0-b130-3a19544a0e9e.png/v1/fill/w_894,h_894/omnitrix_symbol__adult_ben_10__by_gozenfrost_degakzn-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcL2I3MDBjNjMwLTk0MzUtNDg1My1iNTY3LWQwMjUxMTViODI3YlwvZGVnYWt6bi01NzY1MDRjMC1mOGY2LTQwZjAtYjEzMC0zYTE5NTQ0YTBlOWUucG5nIiwid2lkdGgiOiI8PTEwODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.inzP1Lx8D_gYnq5NeOcOAvlgWg-Y2uNeGgot4ybfc64"
+      alt="omnitrix" style="height:fit-content; width:2em; " /></a>
+    <button class="navbar-toggler text-success" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active" title="register a user">Register</a>
+        </li>
+      </ul>
+      <form *ngIf="isAuthenticated"  class="d-flex" [formGroup]="loginForm" (ngSubmit)="login()">
+        <input id="userName"  class="form-control my-sm-2 bg-dark text-success" type="text"
+        id="UserName" formControlName="userName" autofocus placeholder="Username">
+        <input id="password" class="form-control my-sm-2 bg-dark text-success" type="password"
+        id="password" formControlName="password" autofocus placeholder="password">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">login</button>
+      </form>
+      <button class="btn btn-secondary my-2 my-sm-0" *ngIf="!isAuthenticated"(click)="logOut()"type="submit">LogOut</button>
+    </div>
+  </div>
+</nav>
