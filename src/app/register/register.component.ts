@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       this.registerUser = Object.assign({}, this.registerForm.value);
       this.authServ.register(this.registerUser);
+      this.registerForm.reset();
     }
   }
 }
