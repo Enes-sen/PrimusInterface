@@ -20,7 +20,7 @@ export class AlienService {
     return this.http.get<Alien[]>(this.path+"getall");
   }
 
-  add(alien:Alien) {
+  add(alien:any) {
     console.log("alien:",alien);
     this.http.post(this.path + 'add', alien).subscribe(() => {
       this.alertServ.success('Dna başarıyla eklendi');
