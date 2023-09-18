@@ -19,7 +19,7 @@
       <td *ngIf="isOwner===alien.userid">
         <button class="btn btn-danger text-dark w-100 delete-alien-button" type="button" (click)="delete(alien)">Delete-Alien</button>
       </td>
-      <td *ngIf="!(isOwner === alien.userid)">
+      <td *ngIf="isOwner !== alien.userid">
       </td>
     </tr>
   </tbody>
