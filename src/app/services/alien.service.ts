@@ -44,7 +44,7 @@ export class AlienService {
     console.log("alien:",alien);
     this.http.post(this.path + 'delete', alien).subscribe(() => {
       this.alertServ.success('Dna başarıyla Kaldırıldı');
-      this.router.navigateByUrl('/');
+      this.route.navigateByUrl('/');
 
     },
     (errorResponse) => {
