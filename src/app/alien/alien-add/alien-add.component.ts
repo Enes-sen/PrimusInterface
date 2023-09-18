@@ -43,7 +43,7 @@ export class AlienAddComponent implements OnInit {
 
       if (this.file) { // Check if file is defined
         this.alien.formfile = this.file;
-        console.log("formfile:",this.alien.formFile.name,",",this.alien.formFile.type,",",this.alien.formFile.size);
+        console.log("formfile:",this.alien.formfile.name,",",this.alien.formfile.type,",",this.alien.formfile.size);
       }
       const alienFormData = new FormData();
       alienFormData.append("HomeWorld",this.alien.homeworld);
