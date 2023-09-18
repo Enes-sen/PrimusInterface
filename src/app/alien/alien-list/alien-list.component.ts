@@ -16,7 +16,7 @@ export class AlienListComponent implements OnInit{
       this.aliens = data;
     });
   }
-  delete(Alien alien)
+  delete(alien: Alien, $event: any): void
   {
     var id = this.authServ.getCurrentUserId();
     console.log("user:",id,"Alien",alien);
