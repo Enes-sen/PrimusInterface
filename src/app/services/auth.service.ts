@@ -16,7 +16,7 @@ export class AuthService {
     private router: Router,
     private alertifyService: AlertifyService
   ) { }
-  path = 'http://localhost:5058/api/auth/';
+  path = 'https://primusdb.azurewebsites.net/api/auth/';
   decodedToken: any;
   jwtHelper: JwtHelperService = new JwtHelperService();
   TOKEN_KEY = 'token';
