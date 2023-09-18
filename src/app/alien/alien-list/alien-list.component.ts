@@ -18,7 +18,7 @@ export class AlienListComponent implements OnInit{
   }
   delete(alien: Alien): void
   {
-    console.log(id.Tostring(),",",Alien);
+    console.log(Alien);
   }
 
 }
