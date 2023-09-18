@@ -22,7 +22,8 @@ export class AlienService {
 
   add(alien:any) {
     console.log("alien:",alien);
-    this.http.post(this.path + 'add', alien).subscribe(() => {
+    var Alien:Alien = alien; 
+    this.http.post(this.path + 'add', Alien).subscribe(() => {
       this.alertServ.success('Dna başarıyla eklendi');
       this.route.navigateByUrl('/');
 
