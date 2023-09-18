@@ -60,6 +60,7 @@ export class AlienAddComponent implements OnInit {
       if (this.alien !== null) {
         alienFormData.append("UserId",this.alien.userid.toString());
         this.alienServ.add(alienFormData);
+        this.alienAddForm.reset();
 
 
       }
