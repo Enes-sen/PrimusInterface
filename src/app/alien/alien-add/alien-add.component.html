@@ -4,26 +4,26 @@
       <form *ngIf="!isAuthenticated"[formGroup]="alienAddForm" (ngSubmit)="add()" enctype="multipart/form-data" class="p-3 border rounded">
         <div class="form-group">
           <label for="homeWorld">Home-world</label>
-          <input type="text" formControlName="homeWorld" class="form-control" id="homeWorld" placeholder="Home-World">
-          <span class="help-block text-danger" *ngIf="alienAddForm.get('homeWorld')?.hasError('required')&&alienAddForm.get('homeWorld')?.touched">
+          <input type="text" formControlName="homeworld" class="form-control" id="homeworld" placeholder="Home-World">
+          <span class="help-block text-danger" *ngIf="alienAddForm.get('homeworld')?.hasError('required')&&alienAddForm.get('homeworld')?.touched">
             ana dünya tanımı gereklidir!</span>
         </div>
         <div class="form-group">
           <label for="dnaSample">Dna-Sample</label>
-          <input type="text" formControlName="dnaSample" class="form-control" id="dnaSample" placeholder="Dna-Sample">
-          <span class="help-block text-danger" *ngIf="alienAddForm.get('dnaSample')?.hasError('required')&&alienAddForm.get('dnaSample')?.touched">
+          <input type="text" formControlName="dnasample" class="form-control" id="dnasample" placeholder="Dna-Sample">
+          <span class="help-block text-danger" *ngIf="alienAddForm.get('dnasample')?.hasError('required')&&alienAddForm.get('dnasample')?.touched">
             dna tanımlamak zorunludur</span>
         </div>
         <div class="form-group">
           <label for="givenName">	Given-Name</label>
-          <input type="text" formControlName="givenName" class="form-control" id="givenName" placeholder="Given-Name">
-          <span class="help-block text-danger" *ngIf="alienAddForm.get('givenName')?.hasError('required')&&alienAddForm.get('givenName')?.touched">
+          <input type="text" formControlName="givenname" class="form-control" id="givenname" placeholder="Given-Name">
+          <span class="help-block text-danger" *ngIf="alienAddForm.get('givenname')?.hasError('required')&&alienAddForm.get('givenname')?.touched">
             İsim vermek gereklidir!</span>
         </div>
         <div class="form-group">
           <label for="alienShadow"  class="form-label mt-4">Alien-Shadow</label>
-          <input class="form-control" formControlName="formFile" (change)="onFileSelected($event)" type="file" id="formFile">
-          <span class="help-block text-danger"  *ngIf="alienAddForm.get('formFile')?.hasError('required')&&alienAddForm.get('formFile')?.touched">
+          <input class="form-control" formControlName="formfile" (change)="onFileSelected($event)" type="file" id="formFile">
+          <span class="help-block text-danger"  *ngIf="alienAddForm.get('formfile')?.hasError('required')&&alienAddForm.get('formfile')?.touched">
             Uzaylı Gölgesi gereklidir!</span>
         </div>
         <button type="submit" [disabled]="!alienAddForm.valid" class="btn btn-primary w-100">Save-Alien</button>
