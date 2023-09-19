@@ -43,6 +43,7 @@ export class AuthService {
       .post(this.path + 'register', registerUser, { headers: headers })
       .subscribe((data) => {
         this.alertifyService.success('Kayıt İşlemi Başarılı!');
+        this.router.navigateByUrl('/alien');
       });
   }
   saveToken(token: string) {
