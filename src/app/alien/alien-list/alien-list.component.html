@@ -17,7 +17,7 @@
       <td class="text-dark">{{alien.givenname}}</td>
       <td class="text-dark"><img src="{{alien.alienshadow}}" alt="Alien Shadow" class="img-fluid" style="max-width: 50px; height: 100px;"></td>
       <td>
-        <button *ngIf="!isAuthenticated && isOwner && isOwner == alien.userid" class="btn btn-danger text-dark w-100" type="button"  (click)="delete(alien)">
+        <button *ngIf="!isAuthenticated" class="btn btn-danger text-dark w-100" type="button" [disabled]="isOwner && isOwner === alien.userid" (click)="delete(alien)">
           Delete-Alien
         </button>
       </td>
