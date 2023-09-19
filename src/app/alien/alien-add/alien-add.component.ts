@@ -22,10 +22,10 @@ export class AlienAddComponent implements OnInit {
   createAlienForm() {
     this.alienAddForm = this.fBuilder.group(
       {
-        homeWorld: ["", Validators.required],
-        dnaSample: ["", Validators.required],
-        givenName: ["", Validators.required],
-        formFile: ["", Validators.required]
+        homeworld: ["", Validators.required],
+        dnasample: ["", Validators.required],
+        givenname: ["", Validators.required],
+        formfile: ["", Validators.required]
 
       }
     );
