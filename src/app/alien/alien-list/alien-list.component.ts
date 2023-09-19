@@ -26,4 +26,7 @@ export class AlienListComponent implements OnInit{
   get isOwner() {
     return this.authServ.getCurrentUserId();
   }
+  get isAuthenticated() {
+    return this.authServ.loggedIn();
+  }
 }
